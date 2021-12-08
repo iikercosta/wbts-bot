@@ -12,13 +12,13 @@ Requirements that must have the host running the WBTS Bot module:
 
 ## Installation of dependencies
 
-* sudo apt-get install bluez
-* sudo apt-get install bluetooth
-* sudo apt-get install libbluetooth-dev
-* sudo apt-get install python-bluez
-* sudo apt install pkg-config libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev python-dev
-* pip3 install gattlib
-* pip3 install pybluez
+1. `sudo apt-get install bluez`
+2. `sudo apt-get install bluetooth`
+3. `sudo apt-get install libbluetooth-dev`
+4. `sudo apt-get install python-bluez`
+5. `sudo apt install pkg-config libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev python-dev`
+6. `sudo pip3 install gattlib`
+7. `sudo pip3 install pybluez`
 
 
 
