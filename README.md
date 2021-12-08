@@ -17,8 +17,8 @@ Requirements that must have the host running the WBTS Bot module:
 3. `sudo apt-get install libbluetooth-dev`
 4. `sudo apt-get install python-bluez`
 5. `sudo apt install pkg-config libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev python-dev`
-6. `pip3 install gattlib`
-7. `pip3 install pybluez`
+6. `sudo pip3 install gattlib`
+7. `sudo pip3 install pybluez`
 
 
 
