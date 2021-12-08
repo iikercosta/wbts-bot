@@ -13,6 +13,7 @@ class WBTSBotConfig:
     SERVER_IP: str
     SERVER_HTTP_PORT: int
     SERVER_POST_PATH: str
+    BACK_UP_DIR: str
 
     def __init__(self) -> None:
 
@@ -30,6 +31,7 @@ class WBTSBotConfig:
                 self.SERVER_IP = conf_dict["wbts-server-ip"]
                 self.SERVER_HTTP_PORT = conf_dict["wbts-server-http-port"]
                 self.SERVER_POST_PATH = conf_dict["wbts-server-post-path"]
+                self.BACK_UP_DIR = conf_dict["wbts-bot-backup-dir"]
 
         except FileNotFoundError:
             raise FileNotFoundError

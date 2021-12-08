@@ -1,11 +1,12 @@
 {
-  "wbts-bot-location": "Home",
+  "wbts-bot-location": "Test",
   "wbts-bot-ip-interface": "wlp1s0",
   "wbts-bot-bluetooth-interface": "hci0",
   "wbts-bot-ip-passive-scan-timer": 5,
   "wbts-bot-le-passive-scan-timer": 5,
   "wbts-bot-bredr-passive-scan-timer": 5,
-  "wbts-server-ip": "192.168.1.134",
+  "wbts-server-ip": "192.168.1.136",
   "wbts-server-http-port": 4060,
-  "wbts-server-post-path": "register-devices"
+  "wbts-server-post-path": "register-devices",
+  "wbts-bot-backup-dir": "backups"
 }
