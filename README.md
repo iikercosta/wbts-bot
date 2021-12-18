@@ -8,7 +8,7 @@ Requirements that must have the host running the WBTS Bot module:
 
 * Wi-Fi or Ethernet interface.
 * Bluetooth interface > v4.0.
-* Linux operating system. 
+* Linux operating system.
 
 ## Installation of dependencies
 

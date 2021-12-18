@@ -1,14 +1,12 @@
 import struct
 import time
 from socket import htons
-
 from typing import List
 
 from model import Device
 
 
 def macs_to_devices(devs: list, dev_type: str) -> List[Device]:
-
     return [Device(mac, dev_type, [int(time.time())]) for mac in devs]
 
 

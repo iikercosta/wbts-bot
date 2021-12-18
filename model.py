@@ -13,5 +13,3 @@ class Device:
     signature: str
     dev_type: str
     timestamps: List[int]
-
-

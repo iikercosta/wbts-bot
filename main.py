@@ -1,12 +1,11 @@
 from multiprocessing import Process, Queue
 
-from scanners import IP_scan_process, LE_scan_process, BR_EDR_scan_process
 from config import WBTSBotConfig
 from report import http_reporter
+from scanners import IP_scan_process, LE_scan_process, BR_EDR_scan_process
 
 
 def main() -> None:
-
     bot_config: WBTSBotConfig = WBTSBotConfig()
     queue: Queue = Queue()
 

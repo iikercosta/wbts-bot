@@ -1,17 +1,17 @@
 import time
-from multiprocessing import Queue, Process
+from multiprocessing import Queue
 from socket import AF_PACKET, SOCK_RAW, ntohs, socket
 from typing import List
+
+import bluetooth
+from gattlib import DiscoveryService
 
 from config import WBTSBotConfig
 from model import Device, DeviceType
 from utils import get_ethernet_header, macs_to_devices
 
-import bluetooth
-from gattlib import DiscoveryService
 
-
-def passive_ip_scan(if_name: str, time_out: int = 5) -> List[Device]:
+def passive_ip_scan(if_name: str, time_out: int) -> List[Device]:
     macs: set = set()
 
     with socket(AF_PACKET, SOCK_RAW, ntohs(3)) as sd:
@@ -29,7 +29,6 @@ def passive_ip_scan(if_name: str, time_out: int = 5) -> List[Device]:
 
 
 def passive_le_scan(if_name: str = '', time_out: int = 5) -> List[Device]:
-
     discover: DiscoveryService = DiscoveryService(if_name)
 
     discovered_devs = list(set(discover.discover(time_out)))
@@ -38,7 +37,6 @@ def passive_le_scan(if_name: str = '', time_out: int = 5) -> List[Device]:
 
 
 def passive_br_edr_scan(time_out: int = 5) -> List[Device]:
-
     discovered_devs = bluetooth.discover_devices(lookup_names=False, duration=time_out)
 
     return macs_to_devices(discovered_devs, DeviceType.BLUETOOTH_BR_EDR)
