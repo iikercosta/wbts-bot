@@ -5,6 +5,7 @@ from multiprocessing import Queue
 from typing import List
 
 import requests
+from requests import Timeout
 
 from config import WBTSBotConfig
 from model import Device
@@ -24,12 +25,12 @@ def http_reporter(queue: Queue, conf: WBTSBotConfig) -> None:
         devs_dict = {'location': conf.LOCATION, 'devices': [dev.__dict__ for dev in devs]}
 
         try:
-            requests.post(url, json=devs_dict)
+            requests.post(url, json=devs_dict, timeout=2)
 
             if len(os.listdir(conf.BACK_UP_DIR)) != 0:
                 for f in os.listdir(conf.BACK_UP_DIR):
                     with open(f'{conf.BACK_UP_DIR}/{f}', 'r') as fd:
                         requests.post(url, json=json.load(fd))
                     os.remove(f'{conf.BACK_UP_DIR}/{f}')
-        except OSError:
+        except (OSError, Timeout):
             back_up(devs_dict)
