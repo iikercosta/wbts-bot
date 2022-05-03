@@ -21,4 +21,34 @@ Requirements that must have the host running the WBTS Bot module:
 7. `sudo pip3 install pybluez`
 
 
+## Usage
+
+Modify the file `wbts-bot-config.json`.
+```json
+{
+  "wbts-bot-location": "Home 1",
+  "wbts-bot-ip-interface": "wlp1s0",
+  "wbts-bot-bluetooth-interface": "hci0",
+  "wbts-bot-ip-passive-scan-timer": 10,
+  "wbts-bot-le-passive-scan-timer": 10,
+  "wbts-bot-bredr-passive-scan-timer": 10,
+  "wbts-server-ip": "localhost",
+  "wbts-server-http-port": 5000,
+  "wbts-server-post-path": "register-devices",
+  "wbts-bot-backup-dir": "backups"
+}
+```
+* `wbts-bot-location` refers to the location where the bot is installed.
+* `wbts-bot-ip-interface` refers to the IP interface in which the Bot will scan.
+* `wbts-bot-bluetooth-interface` refers to the Bluetooth interface in which the Bot will scan.
+* `*-scan-timers` refers to the refresh rate of reporting to the WBTS Server.
+* `wbts-server-ip` refers to the WBTS Server IP.
+* `wbts-server-http-port` refers to the WBTS Server port.
+* `wbts-server-post-path` refers to the HTTP endpoint of the WBTS Server (shouldn't be modified).
+* `wbts-bot-backup-dir` when the WBTS Server is unavaible, the Bot does backups in this directory.
+
+In order to execute the bot (root privileges needed):
+
+`sudo python3 main.py`
+
 
